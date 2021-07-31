@@ -22,3 +22,135 @@ A blueprint for a house design is like a class description. All the houses built
 2) Abstraction
 3) Polymorphism
 4) Inheritance
+
+## Polymorphism
+In object-oriented programming, polymorphism (from the Greek meaning “having multiple forms”) is the characteristic of being able to assign a different meaning or usage to something in different contexts — specifically, to allow an entity such as a function, or an object to have more than one.
+### In Object-Oriented Programming (OOPS) language, there are two types of polymorphism as below:
+1) Static Binding (or Compile time) Polymorphism, e.g., Method Overloading.
+````
+package com.sharjeelmk.classes_objects;
+public class Person{
+public String name;
+public int age;
+
+public void greetings(){
+    System.out.println("Howdy");
+}
+
+public void greetings(String name){
+    System.out.println("Howdy"+name);
+}
+
+}
+````
+
+2) Dynamic Binding (or Runtime) Polymorphism, e.g., Method overriding.
+
+## Constructor 
+A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes:
+```
+package com.sharjeelmk.classes_objects;
+public class Person{
+public static int count;
+public Person(){
+    count++;
+}
+}
+
+package com.sharjeelmk;
+
+import com.sharjeelmk.classes_objects.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        System.out.println(Person.count);
+    }
+}
+```
+
+### Constructor Over Loading
+it is used for one then one constructor
+```
+package com.sharjeelmk.classes_objects;
+public class Person{
+public static int count;
+public Person(){
+    count++;
+}
+public Person(String newName,int newAge){
+        name=newName;
+        age=newAge;
+}
+}
+
+package com.sharjeelmk;
+
+import com.sharjeelmk.classes_objects.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        Person p2= new Person("Gyale",28);
+        System.out.println(Person.count);
+    }
+}
+```
+
+## This 
+this can used in java for calling one contructor to another constructor also this is used to intial the value to same name varibales but different scope 
+```
+package com.sharjeelmk.classes_objects;
+public class Person{
+public static int count;
+public Person(){
+    count++;
+}
+public Person(String newName,int newAge){
+        this();
+        name=newName;
+        age=newAge;
+}
+}
+
+package com.sharjeelmk;
+
+import com.sharjeelmk.classes_objects.Person;
+
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        Person p2= new Person("Gyale",28);
+        System.out.println(Person.count);
+    }
+}
+```
+
+```
+package com.sharjeelmk.classes_objects;
+public class Person{
+public String name;
+public int age;
+public static int count;
+
+public Person(){
+    count++;
+}
+
+public Person(String name,int age){
+        this();
+        this.name=name;
+        this.age=age;
+    }
+
+
+public void greetings(){
+    System.out.println("Howdy");
+}
+
+public void greetings(String name){
+    System.out.println("Howdy"+name);
+}
+
+}
+```
