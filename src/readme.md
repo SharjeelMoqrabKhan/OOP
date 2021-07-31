@@ -45,6 +45,35 @@ public void greetings(String name){
 ````
 
 2) Dynamic Binding (or Runtime) Polymorphism, e.g., Method overriding.
+Bassed on inheritance 
+```
+ackage com.sharjeelmk.classes_objects;
+public class Person{
+public String name;
+public int age;
+public static int count;
+
+public Person(){
+    count++;
+}
+
+public Person(String name,int age){
+        this();
+        this.name=name;
+        this.age=age;
+    }
+
+
+public void greetings(){
+    System.out.println("Howdy");
+}
+
+public void greetings(String name){
+    System.out.println("Howdy"+name);
+}
+
+
+```
 
 ## Constructor 
 A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes:
@@ -153,4 +182,64 @@ public void greetings(String name){
 }
 
 }
+```
+package com.sharjeelmk.classes_objects;
+
+public class Developer extends Person {
+public Developer(String name,int age){
+    super(name,age); //super is ues for calling parent constructor
+}
+    public void greetings(){
+        System.out.println("Howdy dev");
+    }
+}
+
+```
+
+```
+
+## Inheritance 
+nheritance in Java is a concept that acquires the properties from one class to other classes; for example, the relationship between father and son. 
+
+In Java, a class can inherit attributes and methods from another class. The class that inherits the properties is known as the sub-class or the child class. The class from which the properties are inherited from is know as the superclass or the parent class.
+
+In Inheritance, the properties of the base class is acquired by the derived classes.
+
+```
+ackage com.sharjeelmk.classes_objects;
+public class Person{
+public String name;
+public int age;
+public static int count;
+
+public Person(){
+    count++;
+}
+
+public Person(String name,int age){
+        this();
+        this.name=name;
+        this.age=age;
+    }
+
+
+public void greetings(){
+    System.out.println("Howdy");
+}
+
+public void greetings(String name){
+    System.out.println("Howdy"+name);
+}
+
+package com.sharjeelmk.classes_objects;
+
+public class Developer extends Person {
+public Developer(String name,int age){
+    super(name,age); //super is ues for calling parent constructor
+}
+    public void greetings(){
+        System.out.println("Howdy dev");
+    }
+}
+
 ```
