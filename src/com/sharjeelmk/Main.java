@@ -1,13 +1,13 @@
 package com.sharjeelmk;
-
-import com.sharjeelmk.classes_objects.Developer;
-import com.sharjeelmk.classes_objects.Person;
-
+import com.sharjeelmk.encaps.Cataloug;
 public class Main {
 
     public static void main(String[] args) {
-        Developer flutterDev = new Developer("sharjeel",25);
-        flutterDev.greetings();
+        Cataloug book = new Cataloug();
+        book.itemName="Cracking the COding Interview By Gyale";
+        book.setPrice(600);
+        System.out.println(book.itemName);
+        book.setPrice(600);
     }
 }
 

@@ -243,3 +243,66 @@ public Developer(String name,int age){
 }
 
 ```
+
+## Encapsulation (Hiding data due to security)
+it is use for encapsul the properties and methods and
+for data protecting we use packages and access modifers
+Access Modifer 
+1) Public-> Access anywhere 
+2) Private-> Only accessable in class
+3) Protected-> Only accessable childern class from parent
+Getter and setter is use for using private data 
+
+```
+package com.sharjeelmk;
+import com.sharjeelmk.encaps.Cataloug;
+public class Main {
+
+    public static void main(String[] args) {
+        Cataloug book = new Cataloug();
+        book.itemName="Cracking the COding Interview By Gyale";
+        book.setPrice(600);
+        System.out.println(book.itemName);
+        book.setPrice(600);
+    }
+}
+package com.sharjeelmk.encaps;
+
+public class Cataloug{
+    public String itemName;
+    private int price;
+
+    public void setPrice(int price) {
+        this.price = price;
+        System.out.println(this.price);
+    }
+}
+```
+
+## Abstruction (Hide data for reducing complexity)
+We can do abstraction by abstract classe where a abstract class can not create a object
+abstract class weill be the concept and behave of that we can make many classes and use them 
+package com.sharjeelmk.abstruction;
+
+public abstract class Car {
+int price;
+abstract void start();
+}
+
+class Audi extends  Car{
+    @Override
+    void start() {
+        System.out.println("Audi Start");
+    }
+}
+
+class BMW extends  Car{
+    @Override
+    void start() {
+        System.out.println("BMW Start");
+    }
+}
+
+Another way is interface but in interface we can't defiance body of methods but abstract classes we can
+true abstruction
+
